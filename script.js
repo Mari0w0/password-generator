@@ -13,7 +13,7 @@ var generatePassword = function(){
   var isnums = window.confirm("would you like numbers?")
   var isspecial = window.confirm("would you like special characters?")
   console.log(isuppercase, islowercase, isnums, isspecial)
-  
+  var possiblechar = ("")
 }
 // Write password to the #password input
 function writePassword() {
