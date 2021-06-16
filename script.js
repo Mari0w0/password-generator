@@ -3,7 +3,8 @@ var generateBtn = document.querySelector("#generate");
 var lowercasechar = "abcdefghijklmnopqrstuvwxyz";
 var uppercasechar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
-//add special characters
+var specialchar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+//creates user tangible questions
 var generatePassword = function () {
   var passwordlength = window.prompt("how long is your password?");
   passwordlength = Number(passwordlength);
@@ -16,21 +17,26 @@ var generatePassword = function () {
   var possiblechar = "";
   if (isuppercase) {
     possiblechar += uppercasechar;
-  }
+  } 
   if (islowercase) {
     possiblechar += lowercasechar;
   }
   if (isnums) {
     possiblechar += numbers;
-  }
+  } 
+  if (isspecial) {
+    possiblechar += specialchar;
+  } 
   console.log(possiblechar);
   var randomstring = '';
+  //loops to createa random string
   for (var i=0; i<passwordlength; i++) {
       var rnum = Math.floor(Math.random() * possiblechar.length);
       randomstring += possiblechar.substring(rnum,rnum+1);
   }
   console.log(randomstring)
   return(randomstring)
+
 };
 // Write password to the #password input
 function writePassword() {
